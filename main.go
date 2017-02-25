@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"io"
 	"log"
 )
 
@@ -19,12 +20,14 @@ func main() {
 		log.Fatal("out is a required argument.")
 	}
 
-	if err := createTarball(*path, *out); err != nil {
+	tr, err := createTarball(*path)
+	if err != nil {
 		log.Fatal(err)
 	}
+
 }
 
-func createTarball(path, out string) error {
+func createTarball(path string) (io.Reader, error) {
 	// your code here
-	return nil
+	return nil, nil
 }
